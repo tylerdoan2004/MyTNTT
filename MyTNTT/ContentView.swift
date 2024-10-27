@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var path = NavigationPath()
+    
     var body: some View {
         
         ZStack {
@@ -34,6 +36,7 @@ struct ContentView: View {
                             
                     }
                     
+                    /*
                     NavigationLink(destination: XHView()) {
                         
                         ZStack{
@@ -44,7 +47,7 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                         }
                         
-                    }
+                    } */
                     
                 }
                 

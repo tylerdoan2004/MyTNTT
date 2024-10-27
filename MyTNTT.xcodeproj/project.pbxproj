@@ -13,6 +13,9 @@
 		2F6541FA2CCC75FA009D74B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6541F92CCC75FA009D74B8 /* Preview Assets.xcassets */; };
 		2F6542012CCC95B5009D74B8 /* DTDPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6542002CCC95B5009D74B8 /* DTDPView.swift */; };
 		2F6542032CCC9650009D74B8 /* XHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6542022CCC9650009D74B8 /* XHView.swift */; };
+		2F6542052CCC994C009D74B8 /* MorseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6542042CCC994C009D74B8 /* MorseView.swift */; };
+		2F6542072CCC99A6009D74B8 /* SemaphoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6542062CCC99A6009D74B8 /* SemaphoreView.swift */; };
+		2F65420A2CCCA6FE009D74B8 /* MorseDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6542092CCCA6FE009D74B8 /* MorseDictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		2F6541F92CCC75FA009D74B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2F6542002CCC95B5009D74B8 /* DTDPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTDPView.swift; sourceTree = "<group>"; };
 		2F6542022CCC9650009D74B8 /* XHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XHView.swift; sourceTree = "<group>"; };
+		2F6542042CCC994C009D74B8 /* MorseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseView.swift; sourceTree = "<group>"; };
+		2F6542062CCC99A6009D74B8 /* SemaphoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreView.swift; sourceTree = "<group>"; };
+		2F6542092CCCA6FE009D74B8 /* MorseDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseDictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,7 @@
 			children = (
 				2F6541F22CCC75F8009D74B8 /* MyTNTTApp.swift */,
 				2F6541F42CCC75F8009D74B8 /* ContentView.swift */,
-				2F6542002CCC95B5009D74B8 /* DTDPView.swift */,
+				2F6542082CCCA4EF009D74B8 /* DTDPView */,
 				2F6542022CCC9650009D74B8 /* XHView.swift */,
 				2F6541F62CCC75FA009D74B8 /* Assets.xcassets */,
 				2F6541F82CCC75FA009D74B8 /* Preview Content */,
@@ -71,6 +77,17 @@
 				2F6541F92CCC75FA009D74B8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2F6542082CCCA4EF009D74B8 /* DTDPView */ = {
+			isa = PBXGroup;
+			children = (
+				2F6542002CCC95B5009D74B8 /* DTDPView.swift */,
+				2F6542062CCC99A6009D74B8 /* SemaphoreView.swift */,
+				2F6542042CCC994C009D74B8 /* MorseView.swift */,
+				2F6542092CCCA6FE009D74B8 /* MorseDictionary.swift */,
+			);
+			path = DTDPView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,8 +161,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6541F52CCC75F8009D74B8 /* ContentView.swift in Sources */,
+				2F6542072CCC99A6009D74B8 /* SemaphoreView.swift in Sources */,
 				2F6541F32CCC75F8009D74B8 /* MyTNTTApp.swift in Sources */,
 				2F6542032CCC9650009D74B8 /* XHView.swift in Sources */,
+				2F65420A2CCCA6FE009D74B8 /* MorseDictionary.swift in Sources */,
+				2F6542052CCC994C009D74B8 /* MorseView.swift in Sources */,
 				2F6542012CCC95B5009D74B8 /* DTDPView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
