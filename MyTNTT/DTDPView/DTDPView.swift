@@ -10,10 +10,7 @@ import SwiftUI
 struct DTDPView: View {
     var body: some View {
         
-        
-                    
-        
-            
+
         VStack{
             
             Text("This is the DTDP view")

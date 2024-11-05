@@ -11,8 +11,11 @@ struct MorseView: View {
     
     @State var input: String =  ""
     @State var answer: String = ""
+    @State private var selectedTab = 0
     
     var body: some View {
+        
+        
         
         ZStack {
             
@@ -23,115 +26,128 @@ struct MorseView: View {
                 Spacer()
             } //Morse View
              
-            VStack{
+            
+            TabView(selection: $selectedTab) {
                 
-                ZStack {
+                VStack{
                     
-                    VStack {
-                        Text(answer)
-                            .padding(20)
-                            .bold()
-                            .font(.system(size: 50))
-                    } //Answer Text
-                    .padding(.bottom, 350)
-                    
-                    VStack{
-                    
-                        Text(input)
-                            .padding(20)
-                            .bold()
-                            .font(.system(size: 100))
+                    ZStack {
                         
-                    } //Result Text
-                    .padding(.bottom, 200)
-                    
-                    VStack{
+                        VStack {
+                            Text(answer)
+                                .padding(20)
+                                .bold()
+                                .font(.system(size: 50))
+                        } //Answer Text
+                        .padding(.bottom, 350)
                         
-                        HStack {
+                        VStack{
+                        
+                            Text(input)
+                                .padding(20)
+                                .bold()
+                                .font(.system(size: 100))
+                            
+                        } //Result Text
+                        .padding(.bottom, 200)
+                        
+                        VStack{
+                            
+                            HStack {
+                                
+                                Button {
+                                    dash()
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue)
+                                            .frame(width:90, height:50)
+                                        Text("-")
+                                            .foregroundColor(.white)
+                                            .bold()
+                                    }
+                                }
+                                
+                                Spacer()
+                                    .frame(width: 20)
+                                
+                                Button {
+                                    dot()
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue)
+                                            .frame(width:90, height:50)
+                                        Text(".")
+                                            .foregroundColor(.white)
+                                            .bold()
+                                    }
+                                }
+                            }
+                            
+                            HStack {
+                                
+                                Button {
+                                    delete()
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue)
+                                            .frame(width: 90, height: 50)
+                                        Text("Delete")
+                                            .foregroundColor(.white)
+                                            .bold()
+                                        
+                                    }
+                                }
+                                
+                                Spacer()
+                                    .frame(width: 20)
+                                
+                                Button {
+                                    enter()
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue)
+                                            .frame(width: 90, height: 50)
+                                        Text("Enter")
+                                            .foregroundColor(.white)
+                                            .bold()
+                                        
+                                    }
+                                }
+                                
+                            }
                             
                             Button {
-                                dash()
+                                clear()
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 20)
                                         .fill(Color.blue)
-                                        .frame(width:90, height:50)
-                                    Text("-")
+                                        .frame(width:200, height: 50)
+                                    Text("Clear Output")
                                         .foregroundColor(.white)
                                         .bold()
                                 }
                             }
                             
-                            Spacer()
-                                .frame(width: 20)
-                            
-                            Button {
-                                dot()
-                            } label: {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .fill(Color.blue)
-                                        .frame(width:90, height:50)
-                                    Text(".")
-                                        .foregroundColor(.white)
-                                        .bold()
-                                }
-                            }
-                        }
-                        
-                        HStack {
-                            
-                            Button {
-                                delete()
-                            } label: {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .fill(Color.blue)
-                                        .frame(width: 90, height: 50)
-                                    Text("Delete")
-                                        .foregroundColor(.white)
-                                        .bold()
-                                    
-                                }
-                            }
-                            
-                            Spacer()
-                                .frame(width: 20)
-                            
-                            Button {
-                                enter()
-                            } label: {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .fill(Color.blue)
-                                        .frame(width: 90, height: 50)
-                                    Text("Enter")
-                                        .foregroundColor(.white)
-                                        .bold()
-                                    
-                                }
-                            }
-                            
-                        }
-                        
-                        Button {
-                            clear()
-                        } label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.blue)
-                                    .frame(width:200, height: 50)
-                                Text("Clear Output")
-                                    .foregroundColor(.white)
-                                    .bold()
-                            }
-                        }
-                        
-                    } //Buttons
-                    .padding(.top, 300)
+                        } //Buttons
+                        .padding(.top, 300)
+                    }
+                    
+                }
+                
+                VStack {
+                    Text("trainer view")
                 }
                 
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always)) // Enable swiping
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always)) // Optional: Customize page index appearance
+            .animation(.easeInOut, value: selectedTab)
+            
             
         }
         
