@@ -34,7 +34,7 @@ struct SemaphoreView: View {
                     Text(output)
                         .bold()
                         .font(.system(size: 25))
-                        .padding(.bottom, 500)
+                        .padding(.bottom, 600)
                     
                     ForEach(0..<numberSegments, id: \.self) {index in
                         
@@ -59,9 +59,8 @@ struct SemaphoreView: View {
                                     }
                                 }
                             }
-                        
                     }
-                    .padding(.top, 200)
+                    .padding(.top, 150)
 
                     Button {
                         output = ""

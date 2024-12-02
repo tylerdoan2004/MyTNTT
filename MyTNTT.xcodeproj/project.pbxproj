@@ -16,6 +16,8 @@
 		2F6542052CCC994C009D74B8 /* MorseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6542042CCC994C009D74B8 /* MorseView.swift */; };
 		2F6542072CCC99A6009D74B8 /* SemaphoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6542062CCC99A6009D74B8 /* SemaphoreView.swift */; };
 		2F65420A2CCCA6FE009D74B8 /* MorseDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6542092CCCA6FE009D74B8 /* MorseDictionary.swift */; };
+		2F71405E2CFD60BA008F7038 /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71405D2CFD60BA008F7038 /* SongView.swift */; };
+		2F7140602CFD60D1008F7038 /* PrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71405F2CFD60D1008F7038 /* PrayerView.swift */; };
 		2F8B33082CD2233A0050EFB7 /* SemaphoreDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B33072CD2233A0050EFB7 /* SemaphoreDictionary.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		2F6542042CCC994C009D74B8 /* MorseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseView.swift; sourceTree = "<group>"; };
 		2F6542062CCC99A6009D74B8 /* SemaphoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreView.swift; sourceTree = "<group>"; };
 		2F6542092CCCA6FE009D74B8 /* MorseDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseDictionary.swift; sourceTree = "<group>"; };
+		2F71405D2CFD60BA008F7038 /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
+		2F71405F2CFD60D1008F7038 /* PrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerView.swift; sourceTree = "<group>"; };
 		2F8B33072CD2233A0050EFB7 /* SemaphoreDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreDictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +91,8 @@
 				2F6542002CCC95B5009D74B8 /* DTDPView.swift */,
 				2F6542062CCC99A6009D74B8 /* SemaphoreView.swift */,
 				2F6542042CCC994C009D74B8 /* MorseView.swift */,
+				2F71405D2CFD60BA008F7038 /* SongView.swift */,
+				2F71405F2CFD60D1008F7038 /* PrayerView.swift */,
 				2F6542092CCCA6FE009D74B8 /* MorseDictionary.swift */,
 				2F8B33072CD2233A0050EFB7 /* SemaphoreDictionary.swift */,
 			);
@@ -169,8 +175,10 @@
 				2F6542032CCC9650009D74B8 /* XHView.swift in Sources */,
 				2F65420A2CCCA6FE009D74B8 /* MorseDictionary.swift in Sources */,
 				2F6542052CCC994C009D74B8 /* MorseView.swift in Sources */,
+				2F71405E2CFD60BA008F7038 /* SongView.swift in Sources */,
 				2F8B33082CD2233A0050EFB7 /* SemaphoreDictionary.swift in Sources */,
 				2F6542012CCC95B5009D74B8 /* DTDPView.swift in Sources */,
+				2F7140602CFD60D1008F7038 /* PrayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

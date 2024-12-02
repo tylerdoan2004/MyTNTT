@@ -46,3 +46,7 @@ let morseDictionary = [
     "---..": "8",   // 8
     "----.": "9"    // 9
 ]
+
+let successList = ["Wow!", "Nice!", "Great Job!"]
+
+let failList = ["Oh no!", "Oops", "Back to zero"]

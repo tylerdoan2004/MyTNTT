@@ -9,9 +9,18 @@ import SwiftUI
 
 struct MorseView: View {
     
+    //For translator
     @State var input: String =  ""
     @State var answer: String = ""
     @State private var selectedTab = 0
+    
+    //For trainer
+    @State var trainerInput: String = ""
+    @State var score: Int = 0
+    @State var randomLetter = ""
+    @State var randomValue = ""
+    @State var returnMessage = ""
+    
     
     var body: some View {
         
@@ -29,8 +38,9 @@ struct MorseView: View {
             
             TabView(selection: $selectedTab) {
                 
+                //Morse Translator
                 VStack{
-                    
+                                        
                     ZStack {
                         
                         VStack {
@@ -139,14 +149,120 @@ struct MorseView: View {
                     
                 }
                 
+                
+                //Morse Trainer
+                
+                
                 VStack {
-                    Text("trainer view")
+                    
+                    ZStack {
+                        
+                        Text("This is the trainer view")
+                            .padding(.bottom, 500)
+                        Text("Score: \(score)")
+                            .padding(.bottom, 400)
+                            .font(.system(size:40))
+                        Text("Translate: \(randomLetter)")
+                            .padding(.bottom, 300)
+                            .font(.system(size:40))
+                        Text("Translation \(randomValue)")
+                            .padding(.bottom, 225)
+
+
+                        Text(trainerInput)
+                            .padding(20)
+                            .bold()
+                            .font(.system(size: 100))
+                        
+                        VStack {
+                            HStack {
+                                
+                                Button {
+                                    trainerdash()
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue)
+                                            .frame(width:90, height:50)
+                                        Text("-")
+                                            .foregroundColor(.white)
+                                            .bold()
+                                    }
+                                }
+                                
+                                Spacer()
+                                    .frame(width: 20)
+                                
+                                Button {
+                                    trainerdot()
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue)
+                                            .frame(width:90, height:50)
+                                        Text(".")
+                                            .foregroundColor(.white)
+                                            .bold()
+                                    }
+                                }
+                            }
+                            
+                            HStack {
+                                
+                                Button {
+                                    trainerdelete()
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue)
+                                            .frame(width: 90, height: 50)
+                                        Text("Delete")
+                                            .foregroundColor(.white)
+                                            .bold()
+                                        
+                                    }
+                                }
+                                
+                                Spacer()
+                                    .frame(width: 20)
+                                
+                                Button {
+                                    trainerenter()
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue)
+                                            .frame(width: 90, height: 50)
+                                        Text("Enter")
+                                            .foregroundColor(.white)
+                                            .bold()
+                                        
+                                    }
+                                }
+                                
+                            }
+                        }
+                        .padding(.top, 300)
+                        
+                        Text(returnMessage)
+                            .padding(.top, 500)
+                            .bold()
+                            .font(.system(size: 40))
+                        
+                    }
+                    
+                    
+                    
+                }
+                .onAppear {
+                    generateRandomMorse()
                 }
                 
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always)) // Enable swiping
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always)) // Optional: Customize page index appearance
             .animation(.easeInOut, value: selectedTab)
+            
             
             
         }
@@ -159,8 +275,16 @@ struct MorseView: View {
         input += "-"
     }
     
+    func trainerdash() {
+        trainerInput += "-"
+    }
+    
     func dot() {
         input += "."
+    }
+    
+    func trainerdot() {
+        trainerInput += "."
     }
         
     func enter() {
@@ -171,12 +295,73 @@ struct MorseView: View {
         delete()
     }
     
+    func trainerenter() {
+                
+        if trainerInput == randomValue {
+            score += 1
+            trainerInput = ""
+            generateRandomMorse()
+            generateReturnMessage(result: true)
+        }
+        else {
+            score = 0
+            trainerInput = ""
+            generateRandomMorse()
+            generateReturnMessage(result: false)
+        }
+        //Implement handling for checking if it is right or wrong
+    }
+    
     func delete() {
         input = ""
     }
     
+    func trainerdelete() {
+        trainerInput = ""
+    }
+    
     func clear() {
         answer = ""
+    }
+    
+    func generateRandomMorse() {
+        if let key = morseDictionary.keys.randomElement(), let letter = morseDictionary[key] {
+                
+                randomValue = key
+                randomLetter = letter
+                
+            }
+            
+        }
+    
+    func generateReturnMessage(result: Bool) {
+        
+        if result == true {
+            if let successresult = successList.randomElement() {
+                returnMessage = successresult
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        returnMessage = ""
+                    }
+                }
+            }
+            
+        }
+        else if result == false {
+            if let failresult = failList.randomElement() {
+                returnMessage = failresult
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        returnMessage = ""
+                    }
+                }
+            }
+        }
+        
+        
+                
+        
+        
     }
     
 }
