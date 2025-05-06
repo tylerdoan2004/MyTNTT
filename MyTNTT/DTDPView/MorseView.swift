@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MorseView: View {
     
+    @State private var showKey: Bool = false
+    
     //For translator
     @State var input: String =  ""
     @State var answer: String = ""
@@ -28,13 +30,8 @@ struct MorseView: View {
         
         ZStack {
             
-            VStack {
-                Spacer()
-                    .frame(height: 50)
-                Text("This is the Morse View")
-                Spacer()
-            } //Morse View
-             
+            
+            
             
             TabView(selection: $selectedTab) {
                 
@@ -157,16 +154,20 @@ struct MorseView: View {
                     
                     ZStack {
                         
-                        Text("This is the trainer view")
-                            .padding(.bottom, 500)
-                        Text("Score: \(score)")
-                            .padding(.bottom, 400)
-                            .font(.system(size:40))
+                        HStack {
+                            Text("Score: \(score)")
+                                .padding(.bottom, 500)
+                                .padding(.leading, 50)
+                                .font(.system(size:20))
+                            Spacer()
+                            
+                        }
+                        
+                        
                         Text("Translate: \(randomLetter)")
                             .padding(.bottom, 300)
                             .font(.system(size:40))
-                        Text("Translation \(randomValue)")
-                            .padding(.bottom, 225)
+                        
 
 
                         Text(trainerInput)
@@ -175,6 +176,7 @@ struct MorseView: View {
                             .font(.system(size: 100))
                         
                         VStack {
+                            
                             HStack {
                                 
                                 Button {
@@ -264,7 +266,25 @@ struct MorseView: View {
             .animation(.easeInOut, value: selectedTab)
             
             
-            
+            HStack {
+                
+                Text("This is the Morse View")
+                    .padding(.leading, 50)
+                
+                Spacer()
+                 
+                Button("Key"){
+                    showKey = true
+                }
+                .padding(.trailing, 50)
+                .popover(isPresented: $showKey) {
+                    MorseKey {
+                        showKey = false
+                    }
+                }
+                
+            }
+            .padding(.bottom, 600)
         }
         
     }

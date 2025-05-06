@@ -19,6 +19,7 @@
 		2F71405E2CFD60BA008F7038 /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71405D2CFD60BA008F7038 /* SongView.swift */; };
 		2F7140602CFD60D1008F7038 /* PrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71405F2CFD60D1008F7038 /* PrayerView.swift */; };
 		2F8B33082CD2233A0050EFB7 /* SemaphoreDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B33072CD2233A0050EFB7 /* SemaphoreDictionary.swift */; };
+		2F97F7132CFD77740008FEA7 /* MorseKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F97F7122CFD77740008FEA7 /* MorseKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		2F71405D2CFD60BA008F7038 /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
 		2F71405F2CFD60D1008F7038 /* PrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerView.swift; sourceTree = "<group>"; };
 		2F8B33072CD2233A0050EFB7 /* SemaphoreDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreDictionary.swift; sourceTree = "<group>"; };
+		2F97F7122CFD77740008FEA7 /* MorseKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorseKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				2F71405D2CFD60BA008F7038 /* SongView.swift */,
 				2F71405F2CFD60D1008F7038 /* PrayerView.swift */,
 				2F6542092CCCA6FE009D74B8 /* MorseDictionary.swift */,
+				2F97F7122CFD77740008FEA7 /* MorseKey.swift */,
 				2F8B33072CD2233A0050EFB7 /* SemaphoreDictionary.swift */,
 			);
 			path = DTDPView;
@@ -171,6 +174,7 @@
 			files = (
 				2F6541F52CCC75F8009D74B8 /* ContentView.swift in Sources */,
 				2F6542072CCC99A6009D74B8 /* SemaphoreView.swift in Sources */,
+				2F97F7132CFD77740008FEA7 /* MorseKey.swift in Sources */,
 				2F6541F32CCC75F8009D74B8 /* MyTNTTApp.swift in Sources */,
 				2F6542032CCC9650009D74B8 /* XHView.swift in Sources */,
 				2F65420A2CCCA6FE009D74B8 /* MorseDictionary.swift in Sources */,
